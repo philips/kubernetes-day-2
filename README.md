@@ -113,6 +113,12 @@ NAME                                        STATUS    AGE
 ip-10-0-13-248.us-west-2.compute.internal   Ready     19h
 ```
 
+To make a node unschedulable and remove all pods run the following
+
+```
+kubectl drain  ip-10-0-13-248.us-west-2.compute.internal 
+```
+
 ## kubectl cordon and uncordon
 
 To ensure a node doesn't get additional workloads you can cordon/uncordon a node. This is very useful to investigate an issue and to ensure a node doesn't change while debugging.
@@ -129,6 +135,17 @@ $ kubectl uncordon ip-10-0-84-104.us-west-2.compute.internal
 node "ip-10-0-84-104.us-west-2.compute.internal" uncordoned
 ```
 
+## Monitoring
+
+Using [contrib/kube-prometheus](https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus) deployed in the self-hosted configuration.
+
+Proxy to run queries against prometheus
+
+```
+while true; do kubectl port-forward -n monitoring prometheus-k8s-0 9090; don
+```
+
+NOTE: a few bugs were [found and filed](https://github.com/coreos/prometheus-operator/issues/created_by/philips) against this configuration
 
 ## Configure etcd backup
 
