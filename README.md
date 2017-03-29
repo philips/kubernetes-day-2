@@ -105,6 +105,31 @@ kubectl edit -n kube-system deployment kube-scheduler
 
 Boom!
 
+## kubectl drain and corden
+
+```
+$ kubectl get nodes
+NAME                                        STATUS    AGE
+ip-10-0-13-248.us-west-2.compute.internal   Ready     19h
+```
+
+## kubectl cordon and uncordon
+
+To ensure a node doesn't get additional workloads you can cordon/uncordon a node. This is very useful to investigate an issue and to ensure a node doesn't change while debugging.
+
+```
+$ kubectl cordon ip-10-0-84-104.us-west-2.compute.internal
+node "ip-10-0-84-104.us-west-2.compute.internal" cordoned
+```
+
+To undo run uncordon
+
+```
+$ kubectl uncordon ip-10-0-84-104.us-west-2.compute.internal
+node "ip-10-0-84-104.us-west-2.compute.internal" uncordoned
+```
+
+
 ## Configure etcd backup
 
 Note: S3 backup isn't working in the etcd Operator on self-hosted yet; hunting this down.
