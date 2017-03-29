@@ -89,6 +89,22 @@ Delete the temporary pod
 kubectl delete pod -n kube-system kube-scheduler<Paste>
 ```
 
+## Downgrade/Upgrade Scheduler
+
+Edit the scheduler and downgrade a patch release.
+
+```
+kubectl edit -n kube-system deployment kube-scheduler
+```
+
+Now edit the scheduler and upgrade a patch release.
+
+```
+kubectl edit -n kube-system deployment kube-scheduler
+```
+
+Boom!
+
 ## Configure etcd backup
 
 Note: S3 backup isn't working in the etcd Operator on self-hosted yet; hunting this down.
