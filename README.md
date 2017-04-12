@@ -1,6 +1,6 @@
 # Kubernetes Day 2
 
-These are notes to accompany my [KubeCon EU 2017 talk](https://cloudnativeeu2017.sched.com/event/9Tcw/kubernetes-day-2-cluster-operations-i-brandon-philips-coreos). The slides [are available as well](https://docs.google.com/presentation/d/1LpiWAGbK77Ha8mOxyw01VlZ18zdMSNimhsrb35sUFv8/edit?usp=sharing).
+These are notes to accompany my [KubeCon EU 2017 talk](https://cloudnativeeu2017.sched.com/event/9Tcw/kubernetes-day-2-cluster-operations-i-brandon-philips-coreos). The slides [are available as well](https://docs.google.com/presentation/d/1LpiWAGbK77Ha8mOxyw01VlZ18zdMSNimhsrb35sUFv8/edit?usp=sharing). The video is [available from Youtube](https://www.youtube.com/watch?v=U1zR0eDQRYQ).
 
 How do you keep a Kubernetes cluster running long term? Just like any other service, you need a combination of monitoring, alerting, backup, upgrade, and infrastructure management strategies to make it happen. This talk will walk through and demonstrate the best practices for each of these questions and show off the latest tooling that makes it possible. The takeaway will be lessons and considerations that will influence the way you operate your own Kubernetes clusters.
 
